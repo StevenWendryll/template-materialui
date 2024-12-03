@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
 //Declaração do componente CriarTarefa, recebendo como props, do Componente ListarTarefa, os states handClose, tarefas e setTarefas
@@ -68,13 +67,13 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
           <Grid item xs={12}>
             <FormControl fullWidth>
               <Input id="tarefa_titulo" aria-describedby="tarefa_titulo_helper_text" value={tituloTarefa} onChange={e => { setTituloTarefa(e.target.value) }} />
-              <FormHelperText id="tarefa_titulo_helper_text">Título da Tarefa.</FormHelperText>
+              <FormHelperText id="tarefa_titulo_helper_text">Ticket FreshDesk</FormHelperText>
             </FormControl>
           </Grid>
           <Grid item xs={12}>  
             <FormControl fullWidth>
               <Input id="tarefa_descricao" aria-describedby="tarefa_descricao_helper_text" value={descricaoTarefa} onChange={e => { setDescricaoTarefa(e.target.value) }} />
-              <FormHelperText id="tarefa_descricao_helper_text">Descrição da Tarefa.</FormHelperText>
+              <FormHelperText id="tarefa_descricao_helper_text">Ticket OpenProject</FormHelperText>
             </FormControl>
           </Grid>
           <Grid container spacing={2} mt={1}>
@@ -104,7 +103,7 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
             </Grid>
             <Grid item xs={3}>  
               <FormControl fullWidth>
-                <InputLabel htmlFor="tarefa_recurso">Recurso</InputLabel>
+                <InputLabel htmlFor="tarefa_recurso">Prioridade</InputLabel>
                 <Select
                   id="tarefa_recurso"
                   value={recursoTarefa}
@@ -116,9 +115,10 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
                     fontWeight: 400,
                   }} 
                 >
-                  <MenuItem value={'Recurso 1'}>Recurso 1</MenuItem>
-                  <MenuItem value={'Recurso 2'}>Recurso 2</MenuItem>
-                  <MenuItem value={'Recurso 3'}>Recurso 3</MenuItem>
+                  <MenuItem value={'Baixa'}>Baixa</MenuItem>
+                  <MenuItem value={'Média'}>Média</MenuItem>
+                  <MenuItem value={'Alta'}>Alta</MenuItem>
+                  <MenuItem value={'Urgente'}>Urgente</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
@@ -136,9 +136,15 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
                     fontWeight: 400,
                   }} 
                 >
-                  <MenuItem value={'Aguardando'}>Aguardando</MenuItem>
-                  <MenuItem value={'Em Andamento'}>Em Andamento</MenuItem>
-                  <MenuItem value={'Concluída'}>Concluída</MenuItem>
+                  <MenuItem value={'Aguardando'}>Aberto</MenuItem>
+                  <MenuItem value={'Em atendimento'}>Em atendimento</MenuItem>
+                  <MenuItem value={'Em desenvolvimento'}>Em desenvolvimento</MenuItem>
+                  <MenuItem value={'Aguardando testes de cliente'}>Aguardando testes de cliente</MenuItem>
+                  <MenuItem value={'Fila de desenvolvimento'}>Fila de desenvolvimento</MenuItem>
+                  <MenuItem value={'PendentePendente'}>Pendente</MenuItem>
+                  <MenuItem value={'Aguardando avaliação'}>Aguardando avaliação</MenuItem>
+                  <MenuItem value={'Fechado'}>Fechado</MenuItem>
+                  <MenuItem value={'Resolvido'}>Resolvido</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
